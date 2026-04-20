@@ -1,5 +1,5 @@
 # DevToys.Base64Url
-[![NuGet]()]()
+[![NuGet](https://img.shields.io/nuget/v/DevToys.Base64Url.svg)](https://www.nuget.org/packages/DevToys.Base64Url/)
 
 An extension for [DevToys](https://devtoys.app) which adds Base64Url support.
 
@@ -13,7 +13,7 @@ An extension for [DevToys](https://devtoys.app) which adds Base64Url support.
 
 ## Installation
 
-1. Download the `DevToys.Base64Url` package from [NuGet.org]().
+1. Download the `DevToys.Base64Url` package from [NuGet.org](https://www.nuget.org/packages/DevToys.Base64Url/).
 2. In DevToys, open **Manage Extensions**, click **Install an extension**, and select the downloaded package.
 
 ## What is Base64Url?

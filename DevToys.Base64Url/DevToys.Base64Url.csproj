@@ -12,11 +12,12 @@
         <Title>Base64Url Encoder and Decoder</Title>
         <Description>A Base64Url encoder and decoder extension for DevToys.</Description>
         <PackageTags>devtoys-app</PackageTags>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
     </PropertyGroup>
 
     <ItemGroup>
-        <None Include="..\LICENSE" Link="docs\LICENSE" Pack="true" PackagePath="\" />
-        <None Include="..\README.md" Link="docs\README.md" Pack="true" PackagePath="\" />
+        <None Include="..\LICENSE" Link="LICENSE" Pack="true" PackagePath="\" />
+        <None Include="..\README.md" Link="README.md" Pack="true" PackagePath="\" />
 
         <!-- This makes sure to include platform-specific binaries into the NuGet package, if any-->
         <None Include="runtimes\**" Pack="true" PackagePath="\lib\net8.0\runtimes\">
