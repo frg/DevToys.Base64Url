@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <PackageId>DevToys.Base64Url</PackageId>
+        <Authors>Jean Farrugia</Authors>
+        
+        <!-- DevToys Extension Publishing Metadata -->
+        <IsPackable>true</IsPackable>
+        <Title>Base64Url Encoder and Decoder</Title>
+        <Description>A Base64Url encoder and decoder extension for DevToys.</Description>
+        <PackageTags>devtoys-app</PackageTags>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="$(RepoRoot)LICENSE.md" Link="docs\LICENSE.md" Pack="true" PackagePath="\" />
+        <None Include="$(RepoRoot)README.md" Link="docs\README.md" Pack="true" PackagePath="\" />
+
+        <!-- This makes sure to include platform-specific binaries into the NuGet package, if any-->
+        <None Include="runtimes\**" Pack="true" PackagePath="\lib\net8.0\runtimes\">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="DevToys.Api" Version="2.0.10-preview" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <InternalsVisibleTo Include="DevToys.Base64Url.Tests" />
+    </ItemGroup>
+
+    <!-- This makes sure to include dependencies of the project into the NuGet package, if any -->
+    <Target Name="IncludeAllFilesInTargetDir" BeforeTargets="_GetPackageFiles">
+      <ItemGroup>
+        <None Include="$(OutputPath)\**">
+          <Pack>true</Pack>
+          <PackagePath>lib\net8.0</PackagePath>
+        </None>
+      </ItemGroup>
+    </Target>
+
+</Project>
