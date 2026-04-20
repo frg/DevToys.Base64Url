@@ -15,8 +15,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <None Include="$(RepoRoot)LICENSE" Link="docs\LICENSE" Pack="true" PackagePath="\" />
-        <None Include="$(RepoRoot)README.md" Link="docs\README.md" Pack="true" PackagePath="\" />
+        <None Include="..\LICENSE" Link="docs\LICENSE" Pack="true" PackagePath="\" />
+        <None Include="..\README.md" Link="docs\README.md" Pack="true" PackagePath="\" />
 
         <!-- This makes sure to include platform-specific binaries into the NuGet package, if any-->
         <None Include="runtimes\**" Pack="true" PackagePath="\lib\net8.0\runtimes\">
