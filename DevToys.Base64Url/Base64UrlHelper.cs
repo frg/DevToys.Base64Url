@@ -30,6 +30,12 @@ internal static class Base64UrlHelper
             return false;
         }
 
+        // Whitespace is not part of the Base64Url alphabet
+        if (data.Any(char.IsWhiteSpace))
+        {
+            return false;
+        }
+
         var normalized = data
             .Replace('-', '+')
             .Replace('_', '/');

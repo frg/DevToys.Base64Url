@@ -47,6 +47,8 @@ public class Base64UrlHelperTests
     [InlineData("SGVsbG8gV29ybGQ=")]
     [InlineData("RGV2VG95cw==")]
     [InlineData("Hello+World/")]
+    [InlineData("SGVs bG9y")]   // embedded space is not a valid Base64Url character
+    [InlineData("SGVs\nbG9y")]  // embedded newline is not a valid Base64Url character
     public void IsBase64UrlDataStrict_False(string input)
     {
         var actual = Base64UrlHelper.IsBase64UrlDataStrict(input);
